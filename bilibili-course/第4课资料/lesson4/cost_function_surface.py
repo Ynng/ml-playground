@@ -39,6 +39,7 @@ bs = np.arange(-2,2,0.1)
 #这个网格矩阵的含义可以参考这篇文章:
 #https://blog.csdn.net/lllxxq141592654/article/details/81532855
 ws,bs = np.meshgrid(ws,bs)
+print("ws.shape:",ws.shape)
 print(ws)#打印出来瞅瞅
 print(bs)
 
@@ -55,7 +56,7 @@ es = es/m#求平均值，这样es方差矩阵每个点的位置就是对应的ws
 
 
 fig = plt.figure()
-ax = Axes3D(fig)
+ax = fig.add_subplot(projection='3d')
 
 ax.set_zlim(0,2)
 
