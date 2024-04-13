@@ -6,7 +6,7 @@ def show_scatter(xs,y):
 	x = xs[:,0]
 	z = xs[:,1]
 	fig = plt.figure()
-	ax = Axes3D(fig)
+	ax = fig.add_subplot(111, projection='3d')
 	ax.scatter(x, z, y)
 	plt.show()
 
@@ -16,7 +16,7 @@ def show_surface(x,z,forward_propgation):
 	x,z = np.meshgrid(x,z)
 	y = forward_propgation(x,z)
 	fig = plt.figure()
-	ax = Axes3D(fig)
+	ax = fig.add_subplot(111, projection='3d')
 	ax.plot_surface(x, z, y, cmap='rainbow')
 	plt.show()
 
@@ -26,7 +26,7 @@ def show_scatter_surface(xs,y,forward_propgation):
 	x = xs[:,0]
 	z = xs[:,1]
 	fig = plt.figure()
-	ax = Axes3D(fig)
+	ax = fig.add_subplot(111, projection='3d')
 	ax.scatter(x, z, y)
 
 	x = np.arange(np.min(x),np.max(x),0.01)
