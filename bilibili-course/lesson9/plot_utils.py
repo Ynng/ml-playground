@@ -21,7 +21,7 @@ def show_3d_scatter(X,Y):
 	x = X[:,0]
 	z = X[:,1]
 	fig = plt.figure()
-	ax = Axes3D(fig)
+	ax = fig.add_subplot(111, projection='3d')
 	ax.scatter(x, z, Y)
 	plt.show()
 
@@ -31,7 +31,7 @@ def show_surface(x,z,forward_propgation):
 	x,z = np.meshgrid(x,z)
 	y = forward_propgation(X)
 	fig = plt.figure()
-	ax = Axes3D(fig)
+	ax = fig.add_subplot(111, projection='3d')
 	ax.plot_surface(x, z, y, cmap='rainbow')
 	plt.show()
 
@@ -46,7 +46,7 @@ def show_scatter_surface(X,Y,forward_propgation):
 	y = Y
 
 	fig = plt.figure()
-	ax = Axes3D(fig)
+	ax = fig.add_subplot(111, projection='3d')
 	ax.scatter(x, z, y)
 
 	x = np.arange(np.min(x),np.max(x),0.1)
@@ -59,7 +59,6 @@ def show_scatter_surface(X,Y,forward_propgation):
 			continue
 		X = np.vstack((X,np.column_stack((x[0],z[j]))))
 
-	print(X.shape)
 	r = forward_propgation(X)
 	y = r[0]
 	if type(r) == np.ndarray:
@@ -79,7 +78,7 @@ def show_scatter_surface_with_model(X,Y,model):
 	y = Y
 
 	fig = plt.figure()
-	ax = Axes3D(fig)
+	ax = fig.add_subplot(111, projection='3d')
 	ax.scatter(x, z, y)
 
 	x = np.arange(np.min(x),np.max(x),0.1)
@@ -95,7 +94,6 @@ def show_scatter_surface_with_model(X,Y,model):
 			continue
 		X = np.vstack((X,np.column_stack((x[0],z[j]))))
 
-	print(X.shape)
 	y = model.predict(X)
 	
 	# return
