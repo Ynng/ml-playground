@@ -12,7 +12,7 @@ My TODO list:
 - [ ] Try JAX
 - [ ] Try Scikit-learn
 - [x] Classify MNIST digits
-- [ ] Classify CIFAR-10 images
+- [x] Classify CIFAR-10 images
 - [ ] Classify ImageNet images
 - [x] Sentiment analysis on IMDB reviews
 - [x] Try CNN
